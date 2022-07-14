@@ -1,6 +1,6 @@
 [package]
 name = "bestia_dev_new_rust_wasm_pwa"
-version = "2022.714.1255"
+version = "2022.714.1538"
 authors = ["bestia.dev"]
 homepage = "https://bestia.dev"
 edition = "2021"
@@ -21,11 +21,11 @@ unwrap = "1.2.1"
 wasm-bindgen = { version = "0.2.69", features = ["serde-serialize"] }
 console_error_panic_hook = "0.1.6"
 js-sys = "0.3.46"
-image = "0.23.12"
+image = "0.24.2"
 ico = "0.1.0"
 
 [dependencies.zip]
-version = "0.5.9"
+version = "0.6.2"
 default-features = false
 features = ["deflate"]
 

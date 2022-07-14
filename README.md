@@ -4,17 +4,17 @@
 
 [comment]: # (auto_cargo_toml_to_md start)
 
-**Creates a new Rust Wasm PWA**  
-***version: 2022.714.1255 date: 2022-07-14 author: [bestia.dev](https://bestia.dev) repository: [Github](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa_game)***  
+**Creates a new Rust Wasm PWA project**  
+***version: 2022.714.1538 date: 2022-07-14 author: [bestia.dev](https://bestia.dev) repository: [Github](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa_game)***  
 
 [comment]: # (auto_cargo_toml_to_md end)
 
 [comment]: # (auto_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-751-green.svg)]()
-[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-43-blue.svg)]()
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-71-purple.svg)]()
-[![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)]()
-[![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)]()
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-1474-green.svg)](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa/)
+[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-62-blue.svg)](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-104-purple.svg)](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa/)
+[![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa/)
+[![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa/)
 
 [comment]: # (auto_lines_of_code end)
 

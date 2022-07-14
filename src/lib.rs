@@ -13,6 +13,9 @@ pub struct PwaData {
     pub pwa_name: String,
     pub pwa_description: String,
     pub rust_project_name: String,
+    pub project_author: String,
+    pub project_homepage: String,
+    pub project_repository: String,
 }
 
 #[wasm_bindgen(start)]
