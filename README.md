@@ -5,7 +5,7 @@
 [comment]: # (auto_cargo_toml_to_md start)
 
 **Creates a new Rust Wasm PWA project**  
-***version: 2022.714.2048 date: 2022-07-14 author: [bestia.dev](https://bestia.dev) repository: [Github](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa_game)***  
+***version: 2022.714.2048 date: 2022-07-14 author: [bestia.dev](https://bestia.dev) repository: [Github](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa)***  
 
 [comment]: # (auto_cargo_toml_to_md end)
 
@@ -27,7 +27,8 @@ My projects on Github are more like a tutorial than a finished product: [bestia-
 
 ## Try it
 
-<https://bestia.dev/bestia_dev_new_rust_wasm_pwa/>  
+<https://bestia.dev/bestia_dev_new_rust_wasm_pwa/>
+ 
 ![screenshot](https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa/raw/main/images/screen_1.jpg)
 
 ## Motivation
