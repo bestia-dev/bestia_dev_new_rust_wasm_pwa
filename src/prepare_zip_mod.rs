@@ -152,6 +152,7 @@ pub fn create_and_fill_zip(vec: Vec<u8>, pwa_data: PwaData) {
         &now,
         &pwa_data.rust_project_name,
         &pwa_data.project_homepage,
+        &pwa_data.project_author,
     );
     add_automation_gitignore_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
     add_automation_cargo_toml_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
@@ -645,10 +646,11 @@ pre {
 
 input[type=text] {
     background-color: var(--b_color_code);
-    color: var(--f_color_code);
+    color: var(--f_color_link);
     width: 600px;
-    border: 1px;
-    border-radius: 3px;
+    border-color:var(--b_color_button);
+    border-width: 3px;
+    border-radius: 6px;
     padding: 2px;
     font-size: 100%;
     font-family: Consolas, Liberation Mono, Courier, monospace;
@@ -786,6 +788,7 @@ pub fn add_automation_tasks_rs_main_to_zip(
     now: &zip::DateTime,
     rust_project_name: &str,
     project_homepage: &str,
+    project_author:&str,
 ) {
     debug_write(&format!("add_automation_tasks_rs_main_to_zip"));
     let options = zip::write::FileOptions::default()
@@ -1020,6 +1023,7 @@ https://bestia.dev/{package_name}
 
 "##
 .replace("{rust_project_name}", rust_project_name)
+.replace("{project_author}", project_author)
 .replace("{project_homepage_domain}", project_homepage.trim_start_matches("https://").trim_start_matches("http://"))
 .as_bytes()
     ));
