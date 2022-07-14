@@ -22,7 +22,7 @@ checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
 name = "bestia_dev_new_rust_wasm_pwa"
-version = "2022.714.2048"
+version = "2022.714.2131"
 dependencies = [
  "console_error_panic_hook",
  "ico",
