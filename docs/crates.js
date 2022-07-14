@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["bestia_dev_new_rust_wasm_pwa"];
