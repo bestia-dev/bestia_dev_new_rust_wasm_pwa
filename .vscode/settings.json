@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "Alla",
         "apos",
         "bestia",
         "bindgen",
@@ -7,6 +8,7 @@
         "cdylib",
         "Consolas",
         "controllerchange",
+        "crev",
         "dodgerblue",
         "endregion",
         "favicons",
@@ -17,12 +19,15 @@
         "Lanczos",
         "monospace",
         "Nada",
+        "Nazdravlje",
         "noscript",
         "onchange",
         "onclick",
         "plantuml",
+        "Prost",
         "rgba",
         "Roboto",
+        "Rustaceans",
         "rustlang",
         "rustprojects",
         "samp",
@@ -32,6 +37,7 @@
         "tbody",
         "tfoot",
         "thead",
-        "webassembly"
+        "webassembly",
+        "zdravje"
     ]
 }

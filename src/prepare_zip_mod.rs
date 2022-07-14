@@ -147,14 +147,24 @@ pub fn create_and_fill_zip(vec: Vec<u8>, pwa_data: PwaData) {
     add_css_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
 
     add_rust_yml_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
-    add_automation_tasks_rs_main_to_zip(&mut zip, &now, &pwa_data.rust_project_name, &pwa_data.project_homepage);
+    add_automation_tasks_rs_main_to_zip(
+        &mut zip,
+        &now,
+        &pwa_data.rust_project_name,
+        &pwa_data.project_homepage,
+    );
     add_automation_gitignore_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
     add_automation_cargo_toml_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
     add_src_lib_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
     add_src_dom_mod_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
     add_src_web_sys_mod_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
 
-    add_license_to_zip(&mut zip, &now, &pwa_data.rust_project_name, &pwa_data.project_author);
+    add_license_to_zip(
+        &mut zip,
+        &now,
+        &pwa_data.rust_project_name,
+        &pwa_data.project_author,
+    );
     add_cargo_toml_to_zip(
         &mut zip,
         &now,
@@ -164,7 +174,15 @@ pub fn create_and_fill_zip(vec: Vec<u8>, pwa_data: PwaData) {
         &pwa_data.project_homepage,
         &pwa_data.project_repository,
     );
-    add_readme_md_to_zip(&mut zip, &now, &pwa_data.rust_project_name, &pwa_data.project_homepage, &pwa_data.project_repository, &pwa_data.project_author);
+    add_readme_md_to_zip(
+        &mut zip,
+        &now,
+        &pwa_data.rust_project_name,
+        &pwa_data.project_homepage,
+        &pwa_data.project_repository,
+        &pwa_data.project_author,
+        &pwa_data.pwa_description,
+    );
     add_gitignore_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
     add_vscode_settings_to_zip(&mut zip, &now, &pwa_data.rust_project_name);
 
@@ -514,7 +532,6 @@ navigator.serviceWorker.addEventListener('controllerchange', function () {
         .as_bytes()
     ));
 }
-
 
 /// add css to zip
 pub fn add_css_to_zip(
@@ -1164,7 +1181,6 @@ fn on_click_button_1() {
     ));
 }
 
-
 pub fn add_src_web_sys_mod_to_zip(
     zip: &mut zip::ZipWriter<std::io::Cursor<&mut [u8]>>,
     now: &zip::DateTime,
@@ -1278,7 +1294,7 @@ pub fn add_license_to_zip(
     zip: &mut zip::ZipWriter<std::io::Cursor<&mut [u8]>>,
     now: &zip::DateTime,
     rust_project_name: &str,
-    project_author:&str,
+    project_author: &str,
 ) {
     debug_write(&format!("add_license_to_zip"));
     let options = zip::write::FileOptions::default()
@@ -1310,8 +1326,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 "##
-.replace("{project_author}", project_author)
-.as_bytes()
+        .replace("{project_author}", project_author)
+        .as_bytes()
     ));
 }
 
@@ -1389,9 +1405,10 @@ pub fn add_readme_md_to_zip(
     zip: &mut zip::ZipWriter<std::io::Cursor<&mut [u8]>>,
     now: &zip::DateTime,
     rust_project_name: &str,
-    project_homepage:&str,
-    project_repository:&str,
-    project_author:&str,
+    project_homepage: &str,
+    project_repository: &str,
+    project_author: &str,
+    pwa_description:&str,
 ) {
     debug_write(&format!("add_readme_md_to_zip"));
     let options = zip::write::FileOptions::default()
@@ -1406,7 +1423,7 @@ pub fn add_readme_md_to_zip(
 
 [comment]: # (auto_cargo_toml_to_md start)
 
-**{project_description}**  
+**{pwa_description}**  
 ***version: 2021.204.1558  date: 2021-02-04 author: [{project_author}]({project_homepage}) repository: [GitHub]({project_repository})***  
 
 [comment]: # (auto_cargo_toml_to_md end)
@@ -1435,6 +1452,18 @@ This is a template of a simple Rust Wasm PWA.
 It is created with this PWA utility:  
 <https://bestia.dev/bestia_dev_new_rust_wasm_pwa>
 
+## Development of the utility
+
+Use `cargo-auto` to automate development tasks: `cargo install cargo-auto`.  
+Then inside the Rust project folder run `cargo auto` for the instructions.
+PWA files MUST be served by a web server. We will use the most simple development web server:  
+`cargo install basic-http-server`.  
+Open a new terminal window in VSCode and go to the web server folder and run the server:  
+`cd ~/rustprojects/{rust_project_name}/web_server_folder; basic-http-server`  
+Inside VSCode add the port 4000 for forwarding out of the docker container.
+Open the browser in Win10 on:  
+<http://127.0.0.1:4000/{rust_project_name}/>  
+
 [comment]: # (auto_md_to_doc_comments segment end A)
 
 "##
@@ -1442,6 +1471,7 @@ It is created with this PWA utility:
 .replace("{project_homepage}", project_homepage)
 .replace("{project_repository}", project_repository)
 .replace("{project_author}", project_author)
+.replace("{pwa_description}", pwa_description)
 .as_bytes()
     ));
 }
